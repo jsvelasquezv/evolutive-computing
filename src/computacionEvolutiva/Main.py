@@ -73,7 +73,7 @@ def geneticMutation(board):
     aux=board[num1]
     board[num1]=board[num2]
     board[num2]=aux
-    print board
+    return board
 
 
 if __name__ == '__main__':
@@ -90,19 +90,11 @@ if __name__ == '__main__':
         if(fitness(board) == 0):
             solutions.append(copy.copy(board))
     
-#    print boards
-#    print solutions
-
 
     map = {}
     for i in range(len(boards)): 
         map[i]=fitness(boards[i])
     order = sorted(map, key=map.get)
-#    print order
-#    print map
-    
-    
-    
 
     print "Soluciones de la poblacion inicial ",solutions
 
@@ -119,8 +111,14 @@ if __name__ == '__main__':
 
         boards[order[0]] = sons[0]
         boards[order[1]] = sons[1]
-#    geneticMutation([1,2,3,4,5,6,7,8,9])
-
+        
+        c = random.randint(0,100)
+        if(c < mutationProbability):
+            board = boards[random.randint(0,len(board)-1)]
+            geneticMutation(board)
+            if(fitness(board) == 0):
+                if(not solutions.__contains__(board)):
+                    solutions.append(copy.copy(board))  
 
     print "Soluciones luego del algoritmo ",solutions
 
