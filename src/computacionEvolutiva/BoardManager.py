@@ -52,7 +52,7 @@ class BoardManager:
             if add:
                 self.__solutions.append(copy.copy(board)) 
        
-    def getFathers(self):
+    def getFathers(self, numberOfIndividues):
         """Returns the fathers 
             Obtiene los N tableros al azar
             Ordena los tableros segun sufitness
@@ -60,7 +60,7 @@ class BoardManager:
         """
         individues = range(len(self.__boards))
         shuffle(individues)
-        individues = individues[0:5]
+        individues = individues[0:numberOfIndividues]
         candidates = []
         for i in individues:
             candidates.append(self.__boards[i])
