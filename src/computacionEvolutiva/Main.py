@@ -79,7 +79,7 @@ def geneticMutation(board):
 if __name__ == '__main__':
     queens = 8
     initialPopulation = 10
-    iterations = 1000
+    iterations = 5000
     mutationProbability = 15
                
     board = range(queens)    
@@ -113,7 +113,8 @@ if __name__ == '__main__':
 #        print sons
         for son in sons:
             if(fitness(son) == 0):
-                solutions.append(copy.copy(son))        
+                if(not solutions.__contains__(son)):
+                    solutions.append(copy.copy(son))        
 #        print "----"
 
         boards[order[0]] = sons[0]
