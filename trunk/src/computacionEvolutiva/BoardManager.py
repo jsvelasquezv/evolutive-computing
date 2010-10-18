@@ -8,7 +8,8 @@ from random import shuffle
 import bisect
 import random
 import copy
-
+import EvolutionaryAlgorithm
+from time import clock
 
 class BoardManager:
     '''
@@ -50,6 +51,7 @@ class BoardManager:
                 if board.getUbications() == solution.getUbications():
                     add = False
             if add:
+                print board.getUbications(), (clock() - EvolutionaryAlgorithm.initialTime), "segundos"
                 self.__solutions.append(copy.copy(board)) 
        
     def getFathers(self, numberOfIndividues):
