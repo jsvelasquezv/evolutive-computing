@@ -11,6 +11,7 @@ import copy
 import EvolutionaryAlgorithm
 from time import clock
 
+
 class BoardManager:
     '''
     classdocs
@@ -51,7 +52,8 @@ class BoardManager:
                 if board.getUbications() == solution.getUbications():
                     add = False
             if add:
-                print board.getUbications(), (clock() - EvolutionaryAlgorithm.initialTime), "segundos"
+                import Main
+                print board.getUbications(), (clock() - Main.initialTime), "segundos"
                 self.__solutions.append(copy.copy(board)) 
        
     def getFathers(self, numberOfIndividues):
