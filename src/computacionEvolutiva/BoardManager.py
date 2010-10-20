@@ -8,7 +8,6 @@ from random import shuffle
 import bisect
 import random
 import copy
-import EvolutionaryAlgorithm
 from time import clock
 
 

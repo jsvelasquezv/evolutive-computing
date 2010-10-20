@@ -21,10 +21,11 @@ if __name__ == '__main__':
 
     
     
+    
     initialTime = clock() 
     queens = 8
     initialPopulation = 2000
-    iterations = 6000
+    iterations = 2000
     mutationProbability = 40
     numberOfIndividues = 5
    
