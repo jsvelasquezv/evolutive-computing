@@ -15,10 +15,10 @@ if __name__ == '__main__':
 #        print "Faltan Parametros"
         
 
-    queens = 8
+    queens = 10
     initialPopulation = 2000
-    iterations = 500
-    mutationProbability = 40
+    iterations = 5000
+    mutationProbability = 15
     numberOfIndividues = 5
     
     logger=Logger.Logger(sys.stdout,'./salida.txt')
@@ -29,4 +29,5 @@ if __name__ == '__main__':
     time = t.timeit(1)
        
     print "\nTiempo de ejecucion ", time, "segundos"
+    print "Numero de soluciones", len(evolutionaryAlgorithm.getSolutions())
     logger.close()
