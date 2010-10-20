@@ -23,6 +23,7 @@ class EvolutionaryAlgorithm(threading.Thread):
         Constructor
         '''
         threading.Thread.__init__(self)
+        print iterations
         self.__queens = queens
         self.__initialPopulation = initialPopulation
         self.__iterations = iterations
