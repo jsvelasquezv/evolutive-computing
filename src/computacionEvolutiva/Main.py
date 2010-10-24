@@ -10,8 +10,8 @@ if __name__ == '__main__':
 #        print "Faltan Parametros"
         
 
-    queens = 12
-    initialPopulation = 5000
+    queens = 20
+    initialPopulation = 50
     iterations = 5000
     mutationProbability = 15
     numberOfIndividues = 5
