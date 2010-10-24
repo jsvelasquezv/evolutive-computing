@@ -1,30 +1,15 @@
-'''
-Created on 18/10/2010
 
-@author: Desktop
-'''
 import random
 from BoardManager import BoardManager
-from computacionEvolutiva.EvolutionaryOperators import EvolutionaryOperators
+from EvolutionaryOperators import EvolutionaryOperators
 from time import clock
 
 initialTime = None
 
 class EvolutionaryAlgorithm:
-    '''
-    classdocs
-    '''
-    __queens = None
-    __initialPopulation = None
-    __iterations = None
-    __mutationProbability = None
-    __numberOfIndividues = None
-    __boardManager = None
 
     def __init__(self, queens, initialPopulation, iterations, mutationProbability, numberOfIndividues):
-        '''
-        Constructor
-        '''
+ 
         print "Parametros:"
         print "Numero de reinas         ", queens
         print "Poblacion inicial        ", initialPopulation
@@ -42,18 +27,17 @@ class EvolutionaryAlgorithm:
         self.__mutationProbability = mutationProbability
         self.__numberOfIndividues = numberOfIndividues
         self.__boardManager = BoardManager(self.__queens, self.__initialPopulation)
+        self.__operator = EvolutionaryOperators()
         
     def runAlgorithm(self):
-
-        operator = EvolutionaryOperators()         
         for i in range(self.__iterations):
             fathers = self.__boardManager.getFathers(self.__numberOfIndividues)
-            sons = operator.geneticCross(fathers[0],fathers[1])
+            sons = self.__operator.geneticCross(fathers[0],fathers[1])
             for son in sons :
-                self.__boardManager.insertIfIsSolution(son)
-            if operator.isThereMutation(self.__mutationProbability):
+                self.__boardManager.insertBoard(son)
+            if self.__operator.isThereMutation(self.__mutationProbability):
                 board = self.__boardManager.extractBoard(random.randint(0,len(self.__boardManager.getBoards())-1)) 
-                self.__boardManager.insertBoard(operator.geneticMutation(board))
+                self.__boardManager.insertBoard(self.__operator.geneticMutation(board))
         
     
     def getSolutions(self):

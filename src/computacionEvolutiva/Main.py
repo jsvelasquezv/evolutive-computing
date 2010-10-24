@@ -1,8 +1,3 @@
-'''
-Created on 16/10/2010
-
-@author: Desktop
-'''
 
 import Logger
 import sys
@@ -15,8 +10,8 @@ if __name__ == '__main__':
 #        print "Faltan Parametros"
         
 
-    queens = 10
-    initialPopulation = 2000
+    queens = 12
+    initialPopulation = 5000
     iterations = 5000
     mutationProbability = 15
     numberOfIndividues = 5

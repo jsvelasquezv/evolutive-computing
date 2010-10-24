@@ -1,8 +1,4 @@
-'''
-Created on 17/10/2010
 
-@author: Desktop
-'''
 from Board import Board
 from random import shuffle
 import bisect
@@ -12,20 +8,12 @@ import EvolutionaryAlgorithm
 from time import clock
 
 class BoardManager:
-    '''
-    classdocs
-    '''
-    
-    __queens = None
-    __boards = []
-    __solutions = []
 
     def __init__(self, queens, initialNumberOfBoards):
-        '''
-        Constructor
-        '''
+        self.__boards = []
+        self.__solutions = []
         self.__queens = queens
-        self.__randomBoards(range(1,queens+1), initialNumberOfBoards)
+        self.__randomBoards(range(1,queens+1), initialNumberOfBoards)        
           
     def getBoards(self):
         return self.__boards
@@ -33,8 +21,7 @@ class BoardManager:
     def extractBoard(self, pos):
         board = copy.copy(self.__boards[pos])
         del self.__boards[pos]
-        return board
-        
+        return board        
     
     def getSolutions(self):
         return self.__solutions
