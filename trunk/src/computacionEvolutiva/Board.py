@@ -1,20 +1,7 @@
-'''
-Created on Oct 17, 2010
 
-@author: rodrigo
-'''
 class Board:
-    '''
-    classdocs
-    '''
-    __queens = None
-    __ubications = None
-    __fitnessValue = None
 
     def __init__(self, queens, ubications):
-        '''
-        Constructor
-        '''
         self.__queens = queens
         self.__ubications = ubications
         self.__calculateFitnessValue()

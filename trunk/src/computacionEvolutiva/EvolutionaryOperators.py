@@ -1,15 +1,9 @@
-'''
-Created on 17/10/2010
 
-@author: Desktop
-'''
 import random
 from Board import Board 
 
 class EvolutionaryOperators:
-    '''
-    classdocs
-    '''
+
 
     def __init__(self):
         '''
