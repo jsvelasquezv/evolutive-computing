@@ -9,7 +9,7 @@ if __name__ == '__main__':
         print "Faltan Parametros"
         print "Uso:"
         print "python Main.py <queens> <initialPopulation> <iterations> <mutationProbability> <numberOfIndividues>"
-        print "Main.py 10 50 5000 15 5"        
+        print "Ejemplo: Main.py 10 50 5000 15 5 salida.txt"        
     else:
         queens = int(sys.argv[1])
         initialPopulation = int(sys.argv[2])
