@@ -1,0 +1,1 @@
+An implementation of N-Queens algorithm in an evolutive approach
